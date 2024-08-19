@@ -34,9 +34,14 @@ mongoose.connect(mongoUri, {
 // Routes
 const createAccountRoutes = require('./routes/createAccountRoutes');
 const createAccount1Routes = require('./routes/createAccount1Routes');
+const loginRoutes = require('./routes/loginRoutes');
+const userRoutes = require('./routes/userRoutes'); // Import userRoutes
 
+//API's
 app.use('/api', createAccountRoutes);
 app.use('/api', createAccount1Routes);
+app.use('/api', loginRoutes);
+app.use('/api', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
